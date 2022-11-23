@@ -1,0 +1,38 @@
+Baseado no modelo data
+
+HoraÉvalida (hr,min)
+
+hr = hora;
+min = minuto;
+
+fim
+
+se não 
+
+  hora = 0;
+  minuto = 0;
+
+Horario (hora, minuto)
+//utilizado para validar a existência da hora, para que não tenha coisas como 25 hrs
+
+se ((hora >= 0) e (hora <= 23) e (minuto >= 0) e (minuto < 60)) 
+retorna verdadeiro; 
+senão
+imprime ‘’hora invalida’’; //falso
+//considerariamos 24 ou 00, caso envolvesse data, para aproximar o 23:59 para 00:00 e considerar como outro dia.
+fim
+
+HoraAproximada()
+//para minuto = 60 iremos aumentar 1 hora, porque não existe 12:60 por exemplo, será outra hora
+
+se ((minuto == 60) então (minuto = 0))
+     (hora = hora+1)
+fim
+
+
+ImprimeHora
+//função para mostrar o horario aproximado
+          
+imprime hora;
+imprime '':'';
+imprime minuto;

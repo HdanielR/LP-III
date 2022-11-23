@@ -1,0 +1,55 @@
+Baseado no modelo data
+
+HoraÉvalida (hr,min, seg, cent)
+
+hr = hora;
+min = minuto;
+seg = segundo;
+cent = centesimo;
+
+fim
+
+se não 
+
+  hora = 0;
+  minuto = 0;
+  segundo = 0;
+  centesimo = 0;
+
+Horario (hora, minuto, segundo, centesimo)
+//utilizado para validar a existência da hora, para que não tenha coisas como 25 hrs
+
+se ((hora >= 0) e (hora < 24) e (minuto >= 0) e (minuto <= 60) e (segundo <= 60) e (centesimo <= 100)
+retorna verdadeiro; 
+senão
+imprime ‘’hora invalida’’; //falso
+
+//considerariamos 24 ou 00, caso envolvesse data, para aproximar o 23:59 para 00:00 e considerar como outro dia.
+fim
+
+HoraPrecisa()
+//para minuto = 60 iremos aumentar 1 hora, porque não existe 12:60 por exemplo, será outra hora
+//o mesmo para segundo que só vai até 60 e para centesímo que só vai até 100, iremos adicionar 1 ao antecessor
+
+se ((minuto == 60) então (minuto = 0))
+     (hora = hora+1)
+fim
+se ((segundo == 60) então (segundo = 0))
+   (minuto = minuto+1)
+fim
+se ((centesimo == 100) então (centesimo = 0))
+   (segundo = segundo+1)
+fim
+
+ImprimeHorario
+//função para mostrar o horario preciso
+          
+imprime hora;
+imprime '':'';
+imprime minuto;
+imprime '':'';
+imprime segundo;
+imprime '':'';
+imprime centesimo;
+
+fim 

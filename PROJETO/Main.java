@@ -12,9 +12,9 @@ public class Main{
         Estoque estoque = new Estoque();
         Almoxerifado almoxerifado = new Almoxerifado();
         //Instanciando a interface
-        Armazenar armazena[] = new Armazenar [2];
-        armazena [0] = estoque;
-        armazena [1] = almoxerifado;
+        Armazenar armazena[] = new Armazenar [2]; //cria um vetor de armazenar
+        armazena [0] = estoque; //armazena o estoque no vetor
+        armazena [1] = almoxerifado; //armazena o almoxerifado no vetor
 
         int opcao = 0;
         Scanner scanner = new Scanner(System.in);

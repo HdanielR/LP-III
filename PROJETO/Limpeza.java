@@ -36,6 +36,24 @@ public class Limpeza extends Produto{ //classe filha chama a classe pai
             return false;
         }
     }
+    
+    //metodo para verificar se o produto é de limpeza
+    public static boolean verificaLimpeza(Produto p){
+        if(p instanceof Limpeza){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+     //função para verificar se o produto de limpeza está vencido
+    public Data getVencimentoLimpeza(){
+        if(this.getLimpeza() == true){
+            return this.getVencimento();
+        }else{
+            return null;
+        }
+    }
 
     //metodo toString
     public String toString(){

@@ -39,6 +39,15 @@ public class Alimento extends Produto{ //classe filho
         return false;
     }
 }
+   //metodo para verificar se o produto é de alimento
+public static boolean verificaAlimento(Produto p){
+    if(p instanceof Alimento){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 
 //metodo toString
     public String toString(){
